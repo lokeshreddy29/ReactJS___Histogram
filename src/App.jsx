@@ -20,8 +20,8 @@ function App() {
   const extractCharacters = (word) => {
     const splitString = word.split("");
     // ['a', 'b', 'c']
-    // this is retuning thr ASCII value of the character at 0th index in the split string.
-    // when i remove 97 from the ASCII value that is giving the corresponding index for that character
+    // this is retuning the ASCII value of the character at 0th index in the split string.
+    // when i remove 97 from the ASCII value, that is giving the corresponding index for that character.
     // i can then use the index to store the count of that particular character which can then be used by the Histogram component.
     const newArray = Array(26).fill(0);
 
