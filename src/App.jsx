@@ -2,32 +2,19 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Histogram from './Histogram'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [characterCount, setCharacterCount] = useState(Array(26).fill(0))
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <h1 className="m-2">Histogram</h1>
+      <div className="h-100 w-300 border border-white grid grid-cols-26 content-end p-2">
+        <Histogram count={10} />
+        <Histogram count={20} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is not {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
