@@ -8,7 +8,7 @@ function App() {
   const [characterCount, setCharacterCount] = useState([]);
   const [submit, setSubmit] = useState(false);
 
-  var enteredWord;
+  var enteredWord = "default";
 
   const handleClick = (word) => {
     if (!word) return;
@@ -40,20 +40,22 @@ function App() {
 
   return (
     <>
-      <h1 className="m-3">Alphabet Histogram</h1>
+      <h1 className="m-5 underline">Alphabet Histogram</h1>
       {console.log(characterCount)}
       {!submit ? (
         <div>
           <input
             className="rounded-md m-2 p-2 h-11 bg-zinc-900"
+            defaultValue={enteredWord}
             onChange={(e) => (enteredWord = e.target.value.toLowerCase())}
           />
           <button onClick={() => handleClick(enteredWord)}>Generate</button>
         </div>
       ) : (
         <div>
-          <div className="h-100 w-300 border border-white grid grid-flow-col place-items-end grid-cols-26">
-            {characterCount.map((count, index) => (
+          <div className="h-100 w-300 border border-white grid grid-flow-col 
+          place-items-end self-center grid-cols-26">
+            {characterCount?.map((count, index) => (
               <Histogram key={index} count={count} index={index}/>
             ))}
           </div>

@@ -1,5 +1,5 @@
 export default function Histogram(props) {
-  
+
   var height = props.count;
 
   //This line will convert the index back to the character
@@ -8,10 +8,12 @@ export default function Histogram(props) {
 
   return (
     <div
-      style={{ height: `${height * 10}%` }}
-      className={`w-5 bg-amber-600 text-white flex flex-col justify-end`}
+      style={{ height: `${height*3}rem` }}
+      className={` max-h-100 w-6 bg-blue-500 text-white text-lg flex flex-col justify-end mx-2`}
     >
       {char}
+      <br/>
+      {props.count}
     </div>
   );
 }
