@@ -53,9 +53,13 @@ function App() {
       ) : (
         <div>
           <div className="h-100 w-300 border border-white grid grid-flow-col place-items-end grid-cols-26">
-            <Histogram count={10} />
+            {characterCount.map((count, index) => (
+              <Histogram key={index} count={count} index={index}/>
+            ))}
           </div>
-          <button onClick={() => setSubmit(!submit)}>Edit text</button>
+          <div className='m-3'>
+            <button onClick={() => setSubmit(!submit)}>Edit word</button>
+          </div>
         </div>
       )}
     </>
